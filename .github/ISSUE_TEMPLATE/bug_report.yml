@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a reproducible problem in the QLab 5 edition
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve QLab Waveform. Do not include OSC passcodes, private shows, or licensed media.
+  - type: input
+    id: version
+    attributes:
+      label: QLab Waveform version
+      placeholder: 0.4.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Mac, macOS, and QLab versions
+      placeholder: MacBook Pro M4, macOS 26.6, QLab 5.6.3
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Include steps to reproduce, expected behavior, and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Relevant diagnostics
+      description: Include non-sensitive monitoring diagnostics or logs if useful.
+  - type: checkboxes
+    id: sensitive
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have removed passcodes, private show data, licensed media, and other sensitive information.
+          required: true

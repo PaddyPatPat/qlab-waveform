@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: QLab 4.7 or Catalina issue
+    url: https://github.com/PaddyPatPat/qlab-waveform-qlab4/issues/new/choose
+    about: Use the compatibility repository for QLab 4.7 and Catalina reports.
