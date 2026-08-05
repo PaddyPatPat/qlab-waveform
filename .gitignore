@@ -1,0 +1,15 @@
+.DS_Store
+.build/
+dist/
+memory/
+MEMORY.md
+
+# QLab show documents, backups, and test media stay local.
+*.qlab*
+*.wav
+*.wave
+*.aif
+*.aiff
+*.mp3
+*.m4a
+/local-test-data/
