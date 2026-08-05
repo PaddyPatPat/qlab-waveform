@@ -42,6 +42,8 @@ Start or pause an Audio cue and the companion window should display its waveform
 - Loop-aware presentation, multiple simultaneous cues, and complete playback-rate handling are not implemented.
 - The app is not notarized, so first-launch Gatekeeper confirmation is expected.
 
+See [COMPATIBILITY.md](COMPATIBILITY.md) for the current operating-system test matrix and links to open validation issues.
+
 ## Build from source
 
 The project is a Swift package. For a development build:
