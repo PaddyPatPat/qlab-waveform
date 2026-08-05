@@ -30,11 +30,23 @@ struct ContentView: View {
                 .truncationMode(.tail)
                 .frame(maxWidth: .infinity, alignment: .leading)
             if shouldOfferOSCConnection {
-                SecureField("OSC passcode", text: $oscPasscode, onCommit: connectOSC)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .frame(width: 120)
-                Button(monitor.isOSCConnected ? "Reconnect" : "Connect") { connectOSC() }
-                    .disabled(oscPasscode.isEmpty || monitor.oscConnectionState == .connecting)
+                VStack(alignment: .trailing, spacing: 4) {
+                    HStack {
+                        SecureField("OSC passcode", text: $oscPasscode, onCommit: connectOSC)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .frame(width: 120)
+                        Button(monitor.isOSCConnected ? "Reconnect" : "Connect") { connectOSC() }
+                            .disabled(oscPasscode.isEmpty || monitor.oscConnectionState == .connecting)
+                    }
+                    if let guidance = oscFailureGuidance {
+                        Text(guidance)
+                            .font(.caption2)
+                            .foregroundColor(.red)
+                            .multilineTextAlignment(.trailing)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .frame(maxWidth: 360, alignment: .trailing)
+                    }
+                }
             }
             statusBadge.fixedSize()
             monitoringModeBadge.fixedSize()
@@ -50,6 +62,11 @@ struct ContentView: View {
 
     private var shouldOfferOSCConnection: Bool {
         !monitor.isOSCConnected || (monitor.cue != nil && !monitor.isOSCTimingActive)
+    }
+
+    private var oscFailureGuidance: String? {
+        guard case .failed = monitor.oscConnectionState else { return nil }
+        return "No reply from QLab. Check that QLab is running, OSC connections are enabled, and the passcode is correct."
     }
 
     private var statusBadge: some View {

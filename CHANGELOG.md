@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Adds concise inline troubleshooting guidance after an OSC connection attempt fails.
+
 ## 0.4.0 — 2026-08-05
 
 First public release.
