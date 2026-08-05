@@ -16,6 +16,10 @@ This edition requires QLab 5 and macOS Big Sur 11 or newer. If you use QLab 4.7 
 - Retains and dims the most recently displayed waveform after playback stops.
 - Runs natively on Apple Silicon and Intel Macs.
 
+## Why connect OSC?
+
+An OSC connection gives QLab Waveform frequent, lightweight timing updates and cue events. This keeps playback progress responsive while reducing the number of comparatively expensive AppleScript queries. AppleScript still supplies cue metadata that OSC does not provide and remains an automatic fallback if OSC is unavailable or unhealthy, so the app continues to function without an OSC connection.
+
 ## Requirements
 
 - QLab 5.
