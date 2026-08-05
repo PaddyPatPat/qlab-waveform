@@ -2,6 +2,8 @@
 
 QLab Waveform is a macOS companion app for QLab 5. It displays the waveform, playback progress, elapsed time, remaining time, and Auto-follow state of the currently playing or paused Audio cue.
 
+![QLab Waveform displaying an active Audio cue waveform, playback progress, timers, and monitoring state](assets/qlab-waveform-interface.png)
+
 This edition requires QLab 5 and macOS Big Sur 11 or newer. If you use QLab 4.7 or need Intel macOS Catalina support, see [QLab Waveform for QLab 4](https://github.com/PaddyPatPat/qlab-waveform-qlab4).
 
 ## Features
